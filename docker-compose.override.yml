@@ -1,0 +1,11 @@
+version: '2'
+services:
+  app:
+    container_name: app
+    build: containers/app
+    volumes:
+        - ./containers/app/src:/var/www/app/src
+    environment:
+      - DATABASE_URL=postgres://postgres:password@postgres:5432/kai_database_snapshot
+    ports:
+      - "8000:5000"

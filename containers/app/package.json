@@ -1,0 +1,27 @@
+{
+  "name": "app",
+  "version": "0.0.1",
+  "scripts": {},
+  "babel": {
+    "presets": ["es2015", "react"]
+  },
+  "dependencies": {
+    "express": "^4.15.5",
+    "pg-pubsub": "0.3.0",
+    "react": "^15.6.2",
+    "react-dom": "^15.6.2",
+    "throng": "^4.0.0",
+    "winston": "^2.2.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "react": "^15.6.2",
+    "react-dom": "^15.6.2",
+    "webpack": "^3.6.0",
+    "webpack-dev-server": "^2.8.2"
+  }
+}

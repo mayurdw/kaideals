@@ -1,0 +1,10 @@
+.idea
+.swp
+.pem
+node_modules/
+.iml
+.env
+*.log
+docker-compose.yml
+.makefile.swp
+.DS_Store
