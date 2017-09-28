@@ -22,7 +22,7 @@ Once up and running go to:
 Managing and tracking project progress
 
 # Product
- 
+
 ## Web app
 
 ## Mobile App - iOS / Android
@@ -32,6 +32,7 @@ Managing and tracking project progress
 
 ## Front-End
 - React.js
+- Redux
 
 ## Back-End
 - NodeJS
