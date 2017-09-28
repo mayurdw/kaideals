@@ -9,7 +9,7 @@ class App extends Component {
           <h2>Welcome to Kai Deals</h2>
         </div>
         <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and type <code>make refresh</code> in the terminal.
+          To get started, edit <code>src/components/Intro.jsx</code> and type <code>make refresh</code> in the terminal.
         </p>
       </div>
     );
