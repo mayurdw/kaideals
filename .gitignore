@@ -8,4 +8,4 @@ node_modules/
 docker-compose.yml
 .makefile.swp
 .DS_Store
-.sass_cache/
+.sass-cache/

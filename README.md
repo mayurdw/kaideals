@@ -13,7 +13,15 @@ make install
 make start
 ```
 
-Once up and running go to:
+Once Docker is up and running, you can run the Webpack dev server. Go to ~/containers/app/src/public and type:
+
+```bash
+yarn start
+## or
+npm start
+```
+
+Make sure you have npm or yarn installed
 
 [http://localhost:8000/](http://localhost:8000/)
 
@@ -25,7 +33,7 @@ Managing and tracking project progress
 
 ## Web app
 
-## Mobile App - iOS / Android
+## Mobile App - iOS / Android / React Native
 
 
 # Tech Stack
