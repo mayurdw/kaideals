@@ -30,14 +30,12 @@ docker-compose.override.yml:
 
 start: docker-compose.override.yml
 	docker-compose up -d
+	${MAKE} refresh
 
 stop:
 	docker-compose down || true
 	docker-compose down  --remove-orphans
 
-
-status: ~/.ecs/config
-	ecs-cli ps
 
 clean:
 	rm -f ~/.ecs/config
