@@ -7,7 +7,7 @@ const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   inject: 'body',
 })
 const extractSass = new ExtractTextPlugin({
-  filename: './src/public/stylesheets/screen.css',
+  filename: '/stylesheets/screen.css',
   allChunks: true
 })
 module.exports = {

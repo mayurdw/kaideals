@@ -74,3 +74,30 @@ nuke:
 	docker rmi $$(docker images --filter 'dangling=true' -q --no-trunc) || true
 	docker rmi -f $$(docker images  --filter=reference='${COMPOSE_PROJECT_NAME}_*' -a -q) || true
 	docker rmi -f $$(docker images -a -q) || true
+
+postgres:
+	${MAKE} db
+	${MAKE} prod
+
+
+db:
+	createdb -h localhost -p 58008  -U postgres kai_database || true
+
+prod:
+	psql -h localhost -p 58008  -U postgres kai_database -f ./containers/database/kai_database_snapshot.sql
+
+schema:
+	psql -h localhost -p 58008 -U postgres kai_database -f ./containers/database/schema_kai_database.sql
+
+
+savedb: ./containers/database/schema_kai_database.sql ./containers/database/kai_database_snapshot.sql
+
+rmdb:
+	rm ./containers/database/schema_kai_database.sql
+	rm ./containers/database/kai_database_snapshot.sql
+
+./containers/database/schema_kai_database.sql:
+	docker exec postgres pg_dump -h localhost -p 5432 -c -O -x -s -U postgres kai_database  > ./containers/database/schema_kai_database.sql
+
+./containers/database/kai_database_snapshot.sql:
+	docker exec postgres pg_dump -h localhost -p 5432 -c -O -x -U postgres kai_database  > ./containers/database/kai_database_snapshot.sql

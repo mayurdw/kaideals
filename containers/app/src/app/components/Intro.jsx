@@ -5,7 +5,7 @@ class App extends Component {
     return (
       <div className="app">
         <div className="app-header">
-          <img src="src/public/img/food.svg" className="app-logo" alt="logo" />
+          <img src="/img/food.svg" className="app-logo" alt="logo" />
           <h2>Welcome to Kai Deals</h2>
         </div>
         <p className="app-intro">

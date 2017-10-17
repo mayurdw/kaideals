@@ -9619,6 +9619,10 @@ var _Intro = __webpack_require__(185);
 
 var _Intro2 = _interopRequireDefault(_Intro);
 
+var _screen = __webpack_require__(186);
+
+var _screen2 = _interopRequireDefault(_screen);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 _reactDom2.default.render(_react2.default.createElement(_Intro2.default, null), document.getElementById('root'));
@@ -22125,11 +22129,11 @@ var App = function (_Component) {
     value: function render() {
       return _react2.default.createElement(
         "div",
-        { className: "App" },
+        { className: "app" },
         _react2.default.createElement(
           "div",
-          { className: "App-header" },
-          _react2.default.createElement("img", { src: "/img/food.svg", className: "App-logo", alt: "logo" }),
+          { className: "app-header" },
+          _react2.default.createElement("img", { src: "/img/food.svg", className: "app-logo", alt: "logo" }),
           _react2.default.createElement(
             "h2",
             null,
@@ -22138,7 +22142,7 @@ var App = function (_Component) {
         ),
         _react2.default.createElement(
           "p",
-          { className: "App-intro" },
+          { className: "app-intro" },
           "To get started, edit ",
           _react2.default.createElement(
             "code",
@@ -22161,6 +22165,12 @@ var App = function (_Component) {
 }(_react.Component);
 
 exports.default = App;
+
+/***/ }),
+/* 186 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);

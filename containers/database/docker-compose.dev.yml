@@ -1,0 +1,5 @@
+  postgres:
+    image: "postgres"
+    container_name: "postgres"
+    ports:
+      - "58008:5432"
