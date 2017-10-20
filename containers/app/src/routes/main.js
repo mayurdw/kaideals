@@ -1,14 +1,15 @@
-var express = require("express");
-var router = express.Router();
+"use strict";
 
-const path = require("path");
-var APP_ROOT = path.join(__dirname, '..')
+const MAIN_ROUTES = new Map([
+    ['get_main', { verb: 'get', url: '/' }]
+]);
 
-router.use(express.static(path.join(APP_ROOT, 'public')));
-router.get('/', function (req, res) {
-    console.log("XXXXXXXX");
+var router = require('./router').create(
+    MAIN_ROUTES
+    , require('../views')
+);
 
-    res.sendFile('public/index.html', {root: APP_ROOT});
-});
+const site = require('../site');
+router.use(site.PUBLIC_STATIC);
 
 module.exports = router;
