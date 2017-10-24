@@ -1,4 +1,4 @@
-export CONTAINER_NAME=app
+export CONTAINER_NAME=postgres
 
 
 refresh:
@@ -23,5 +23,5 @@ deploy:
 
 
 install:
-    echo 'nothing'
+	echo 'nothing'
 

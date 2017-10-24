@@ -1,8 +1,6 @@
 FROM node:alpine
 
-
 RUN npm i -g pm2 &>/dev/null
-
 
 RUN mkdir -p /var/www/app
 WORKDIR /var/www/app

@@ -4,6 +4,6 @@
     volumes:
         - ./containers/app/src:/var/www/app/src
     environment:
-      - DATABASE_URL=postgres://postgres:password@postgres:5432/kai_database_snapshot
+      - DATABASE_URL=postgres://postgres:password@postgres:5432/kai_db
     ports:
       - "8000:5000"

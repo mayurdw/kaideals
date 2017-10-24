@@ -6,6 +6,9 @@ const express = require("express");
 module.exports = function() {
 
     let app = express();
+
+    let db = require('./models')
+
     let routes = require('./routes');
     routes.register(app);
 

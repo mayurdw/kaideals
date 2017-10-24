@@ -7,7 +7,13 @@ SHELL:=/bin/bash
 export DOCKER_COMPOSE_VERSION=2
 export COMPOSE_PROJECT_NAME=kaideals
 
+MD5 := $(shell which md5)
+ifdef MD5
 export TAG:=${shell date | md5 | cut -c27-}
+else
+export TAG:=${shell date | md5sum | cut -c27-}
+endif
+
 export CONTAINERS = $(wildcard containers/*)
 
 define start_service

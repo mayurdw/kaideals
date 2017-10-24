@@ -1,5 +1,7 @@
   postgres:
-    image: "postgres"
+    image: "mdillon/postgis"
+    volumes:
+        - ./containers/database/kai_db.sql:/docker-entrypoint-initdb.d/kai_db.sql
     container_name: "postgres"
     ports:
       - "58008:5432"
