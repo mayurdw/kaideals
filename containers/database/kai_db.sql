@@ -107,9 +107,9 @@ CREATE SEQUENCE public.deal_ids
 ALTER SEQUENCE public.deal_ids OWNER TO postgres;
 -- ddl-end --
 
--- object: public.deal | type: TABLE --
--- DROP TABLE IF EXISTS public.deal;
-CREATE TABLE public.deal(
+-- object: public.deals | type: TABLE --
+-- DROP TABLE IF EXISTS public.deals;
+CREATE TABLE public.deals(
 	id integer NOT NULL DEFAULT nextval('public.deal_ids'::regclass),
 	name varchar(32) NOT NULL,
 	description text,
@@ -130,12 +130,12 @@ CREATE TABLE public.deal(
 )
 TABLESPACE pg_default;
 -- ddl-end --
-ALTER TABLE public.deal OWNER TO postgres;
+ALTER TABLE public.deals OWNER TO postgres;
 -- ddl-end --
 
 -- object: food_categories_fk | type: CONSTRAINT --
--- ALTER TABLE public.deal DROP CONSTRAINT IF EXISTS food_categories_fk CASCADE;
-ALTER TABLE public.deal ADD CONSTRAINT food_categories_fk FOREIGN KEY (food_category)
+-- ALTER TABLE public.deals DROP CONSTRAINT IF EXISTS food_categories_fk CASCADE;
+ALTER TABLE public.deals ADD CONSTRAINT food_categories_fk FOREIGN KEY (food_category)
 REFERENCES public.food_categories (id) MATCH FULL
 ON DELETE SET NULL ON UPDATE CASCADE;
 -- ddl-end --
@@ -175,10 +175,10 @@ REFERENCES public.dealers (id) MATCH FULL
 ON DELETE SET NULL ON UPDATE CASCADE;
 -- ddl-end --
 
--- object: deal_fk | type: CONSTRAINT --
--- ALTER TABLE public.dealer_deals DROP CONSTRAINT IF EXISTS deal_fk CASCADE;
-ALTER TABLE public.dealer_deals ADD CONSTRAINT deal_fk FOREIGN KEY (deal)
-REFERENCES public.deal (id) MATCH FULL
+-- object: deals_fk | type: CONSTRAINT --
+-- ALTER TABLE public.dealer_deals DROP CONSTRAINT IF EXISTS deals_fk CASCADE;
+ALTER TABLE public.dealer_deals ADD CONSTRAINT deals_fk FOREIGN KEY (deal)
+REFERENCES public.deals (id) MATCH FULL
 ON DELETE RESTRICT ON UPDATE CASCADE;
 -- ddl-end --
 
@@ -194,10 +194,10 @@ REFERENCES public.outlets (id) MATCH FULL
 ON DELETE SET NULL ON UPDATE CASCADE;
 -- ddl-end --
 
--- object: deal_fk | type: CONSTRAINT --
--- ALTER TABLE public.outlet_deals DROP CONSTRAINT IF EXISTS deal_fk CASCADE;
-ALTER TABLE public.outlet_deals ADD CONSTRAINT deal_fk FOREIGN KEY (deal)
-REFERENCES public.deal (id) MATCH FULL
+-- object: deals_fk | type: CONSTRAINT --
+-- ALTER TABLE public.outlet_deals DROP CONSTRAINT IF EXISTS deals_fk CASCADE;
+ALTER TABLE public.outlet_deals ADD CONSTRAINT deals_fk FOREIGN KEY (deal)
+REFERENCES public.deals (id) MATCH FULL
 ON DELETE RESTRICT ON UPDATE CASCADE;
 -- ddl-end --
 
