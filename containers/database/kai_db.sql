@@ -50,6 +50,7 @@ ALTER SEQUENCE public.outlet_ids OWNER TO postgres;
 CREATE TABLE public.outlets(
 	id integer NOT NULL DEFAULT nextval('public.outlet_ids'::regclass),
 	dealer smallint NOT NULL,
+	name varchar(32),
 	location geography,
 	address text,
 	phone varchar(20),
@@ -110,9 +111,11 @@ ALTER SEQUENCE public.deal_ids OWNER TO postgres;
 -- DROP TABLE IF EXISTS public.deal;
 CREATE TABLE public.deal(
 	id integer NOT NULL DEFAULT nextval('public.deal_ids'::regclass),
-	description text NOT NULL,
+	name varchar(32) NOT NULL,
+	description text,
 	price decimal NOT NULL,
 	food_category smallint,
+	upload_path varchar(255),
 	begins date NOT NULL,
 	ends date NOT NULL,
 	mon boolean NOT NULL DEFAULT TRUE,
@@ -257,7 +260,7 @@ ALTER SEQUENCE public.login_ids OWNER TO postgres;
 -- ddl-end --
 
 -- object: public.logins | type: TABLE --
--- DROP TABLE IF EXISTS public.login CASCADE;
+-- DROP TABLE IF EXISTS public.logins CASCADE;
 CREATE TABLE public.logins(
 	id smallint NOT NULL DEFAULT nextval('public.login_ids'::regclass),
 	email varchar(254) NOT NULL,
@@ -285,9 +288,9 @@ REFERENCES public.dealers (id) MATCH FULL
 ON DELETE SET NULL ON UPDATE CASCADE;
 -- ddl-end --
 
--- object: login_uq | type: CONSTRAINT --
--- ALTER TABLE public.login DROP CONSTRAINT IF EXISTS login_uq CASCADE;
-ALTER TABLE public.logins ADD CONSTRAINT login_uq UNIQUE (dealer);
+-- object: logins_uq | type: CONSTRAINT --
+-- ALTER TABLE public.logins DROP CONSTRAINT IF EXISTS logins_uq CASCADE;
+ALTER TABLE public.logins ADD CONSTRAINT logins_uq UNIQUE (dealer);
 -- ddl-end --
 
 --
