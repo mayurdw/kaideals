@@ -1,5 +1,8 @@
 @import "compass/reset";
 @import "compass/css3";
+@import "mixins";
+@import "vars";
+@import "base";
 
 body {
   margin: 0;
@@ -18,7 +21,6 @@ body {
 }
 
 .app-logo {
-  // @include animation(app-logo-spin infinite 20s linear);
   animation: app-logo-spin infinite 20s linear;
   height: 80px;
 }

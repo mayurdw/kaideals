@@ -3,17 +3,17 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   template: './src/public/index.html',
-  filename: 'index.html',
+  title: 'Super Dope React App',
   inject: 'body',
 })
 const extractSass = new ExtractTextPlugin({
-  filename: '/stylesheets/screen.css',
+  filename: 'stylesheets/screen.css',
   allChunks: true
 })
 module.exports = {
     entry: ['./src/app/index.js'],
     output: {
-        path: __dirname + '/src/public',
+        path: path.resolve(__dirname, './src/public'),
         filename: 'bundle.js'
     },
     module: {
@@ -30,7 +30,7 @@ module.exports = {
                 options: {
                   includePaths: ['./node_modules/compass-mixins/lib']
                 }
-              }
+              },
             ],
             fallback: "style-loader"
           })
@@ -49,5 +49,5 @@ module.exports = {
     },
     plugins: [
       HtmlWebpackPluginConfig, extractSass
-    ]
+    ],
 };
