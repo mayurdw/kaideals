@@ -3,7 +3,7 @@
 CAUTION: Do not modify this file unless you know what you are doing.
          Unexpected results may occur if the code is changed deliberately.
 -->
-<dbmodel pgmodeler-ver="0.9.1-alpha" last-position="0,48" last-zoom="0.8"
+<dbmodel pgmodeler-ver="0.9.1-alpha" last-position="0,46" last-zoom="0.8"
 	 default-schema="public" default-owner="postgres">
 <database name="kai_db">
 </database>
@@ -50,6 +50,9 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	<position x="320" y="100"/>
 	<column name="id" not-null="true" sequence="public.outlet_ids">
 		<type name="integer" length="0"/>
+	</column>
+	<column name="name">
+		<type name="varchar" length="32"/>
 	</column>
 	<column name="location">
 		<type name="geography" length="0"/>
@@ -117,7 +120,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	<role name="postgres"/>
 </sequence>
 
-<table name="deal">
+<table name="deals">
 	<schema name="public"/>
 	<role name="postgres"/>
 	<tablespace name="pg_default"/>
@@ -125,11 +128,17 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	<column name="id" not-null="true" sequence="public.deal_ids">
 		<type name="integer" length="0"/>
 	</column>
-	<column name="description" not-null="true">
+	<column name="name" not-null="true">
+		<type name="varchar" length="32"/>
+	</column>
+	<column name="description">
 		<type name="text" length="0"/>
 	</column>
 	<column name="price" not-null="true">
 		<type name="decimal" length="0"/>
+	</column>
+	<column name="upload_path">
+		<type name="varchar" length="255"/>
 	</column>
 	<column name="begins" not-null="true">
 		<type name="date" length="0"/>
@@ -158,12 +167,12 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	<column name="sun" not-null="true" default-value="TRUE">
 		<type name="boolean" length="0"/>
 	</column>
-	<constraint name="deal_pk" type="pk-constr" table="public.deal">
+	<constraint name="deal_pk" type="pk-constr" table="public.deals">
 		<columns names="id" ref-type="src-columns"/>
 	</constraint>
 
 	<customidxs object-type="column">
-		<object name="food_category" index="3"/>
+		<object name="food_category" index="4"/>
 	</customidxs>
 
 	<customidxs object-type="constraint">
@@ -177,7 +186,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	 src-fk-pattern="{st}_fk"
 	 custom-color="#d40edc"
 	 src-table="public.food_categories"
-	 dst-table="public.deal"
+	 dst-table="public.deals"
 	 src-required="false" dst-required="false">
 	<label ref-type="dst-label">
 		<position x="0" y="0"/>
@@ -221,7 +230,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	 src-fk-pattern="{st}_fk"
 	 custom-color="#e56893"
 	 src-table="public.dealer_deals"
-	 dst-table="public.deal"
+	 dst-table="public.deals"
 	 src-required="false" dst-required="true">
 	<label ref-type="name-label">
 		<position x="0" y="0"/>
@@ -249,7 +258,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	 src-fk-pattern="{st}_fk"
 	 custom-color="#3c7b36"
 	 src-table="public.outlet_deals"
-	 dst-table="public.deal"
+	 dst-table="public.deals"
 	 src-required="false" dst-required="true">
 	<label ref-type="name-label">
 		<position x="0" y="0"/>

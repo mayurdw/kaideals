@@ -50,6 +50,7 @@ ALTER SEQUENCE public.outlet_ids OWNER TO postgres;
 CREATE TABLE public.outlets(
 	id integer NOT NULL DEFAULT nextval('public.outlet_ids'::regclass),
 	dealer smallint NOT NULL,
+	name varchar(32),
 	location geography,
 	address text,
 	phone varchar(20),
@@ -106,13 +107,15 @@ CREATE SEQUENCE public.deal_ids
 ALTER SEQUENCE public.deal_ids OWNER TO postgres;
 -- ddl-end --
 
--- object: public.deal | type: TABLE --
--- DROP TABLE IF EXISTS public.deal;
-CREATE TABLE public.deal(
+-- object: public.deals | type: TABLE --
+-- DROP TABLE IF EXISTS public.deals;
+CREATE TABLE public.deals(
 	id integer NOT NULL DEFAULT nextval('public.deal_ids'::regclass),
-	description text NOT NULL,
+	name varchar(32) NOT NULL,
+	description text,
 	price decimal NOT NULL,
 	food_category smallint,
+	upload_path varchar(255),
 	begins date NOT NULL,
 	ends date NOT NULL,
 	mon boolean NOT NULL DEFAULT TRUE,
@@ -127,12 +130,12 @@ CREATE TABLE public.deal(
 )
 TABLESPACE pg_default;
 -- ddl-end --
-ALTER TABLE public.deal OWNER TO postgres;
+ALTER TABLE public.deals OWNER TO postgres;
 -- ddl-end --
 
 -- object: food_categories_fk | type: CONSTRAINT --
--- ALTER TABLE public.deal DROP CONSTRAINT IF EXISTS food_categories_fk CASCADE;
-ALTER TABLE public.deal ADD CONSTRAINT food_categories_fk FOREIGN KEY (food_category)
+-- ALTER TABLE public.deals DROP CONSTRAINT IF EXISTS food_categories_fk CASCADE;
+ALTER TABLE public.deals ADD CONSTRAINT food_categories_fk FOREIGN KEY (food_category)
 REFERENCES public.food_categories (id) MATCH FULL
 ON DELETE SET NULL ON UPDATE CASCADE;
 -- ddl-end --
@@ -172,10 +175,10 @@ REFERENCES public.dealers (id) MATCH FULL
 ON DELETE SET NULL ON UPDATE CASCADE;
 -- ddl-end --
 
--- object: deal_fk | type: CONSTRAINT --
--- ALTER TABLE public.dealer_deals DROP CONSTRAINT IF EXISTS deal_fk CASCADE;
-ALTER TABLE public.dealer_deals ADD CONSTRAINT deal_fk FOREIGN KEY (deal)
-REFERENCES public.deal (id) MATCH FULL
+-- object: deals_fk | type: CONSTRAINT --
+-- ALTER TABLE public.dealer_deals DROP CONSTRAINT IF EXISTS deals_fk CASCADE;
+ALTER TABLE public.dealer_deals ADD CONSTRAINT deals_fk FOREIGN KEY (deal)
+REFERENCES public.deals (id) MATCH FULL
 ON DELETE RESTRICT ON UPDATE CASCADE;
 -- ddl-end --
 
@@ -191,10 +194,10 @@ REFERENCES public.outlets (id) MATCH FULL
 ON DELETE SET NULL ON UPDATE CASCADE;
 -- ddl-end --
 
--- object: deal_fk | type: CONSTRAINT --
--- ALTER TABLE public.outlet_deals DROP CONSTRAINT IF EXISTS deal_fk CASCADE;
-ALTER TABLE public.outlet_deals ADD CONSTRAINT deal_fk FOREIGN KEY (deal)
-REFERENCES public.deal (id) MATCH FULL
+-- object: deals_fk | type: CONSTRAINT --
+-- ALTER TABLE public.outlet_deals DROP CONSTRAINT IF EXISTS deals_fk CASCADE;
+ALTER TABLE public.outlet_deals ADD CONSTRAINT deals_fk FOREIGN KEY (deal)
+REFERENCES public.deals (id) MATCH FULL
 ON DELETE RESTRICT ON UPDATE CASCADE;
 -- ddl-end --
 
@@ -257,7 +260,7 @@ ALTER SEQUENCE public.login_ids OWNER TO postgres;
 -- ddl-end --
 
 -- object: public.logins | type: TABLE --
--- DROP TABLE IF EXISTS public.login CASCADE;
+-- DROP TABLE IF EXISTS public.logins CASCADE;
 CREATE TABLE public.logins(
 	id smallint NOT NULL DEFAULT nextval('public.login_ids'::regclass),
 	email varchar(254) NOT NULL,
@@ -285,9 +288,9 @@ REFERENCES public.dealers (id) MATCH FULL
 ON DELETE SET NULL ON UPDATE CASCADE;
 -- ddl-end --
 
--- object: login_uq | type: CONSTRAINT --
--- ALTER TABLE public.login DROP CONSTRAINT IF EXISTS login_uq CASCADE;
-ALTER TABLE public.logins ADD CONSTRAINT login_uq UNIQUE (dealer);
+-- object: logins_uq | type: CONSTRAINT --
+-- ALTER TABLE public.logins DROP CONSTRAINT IF EXISTS logins_uq CASCADE;
+ALTER TABLE public.logins ADD CONSTRAINT logins_uq UNIQUE (dealer);
 -- ddl-end --
 
 --
