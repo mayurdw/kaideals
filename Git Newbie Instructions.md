@@ -34,7 +34,7 @@ To give you a sense of how to create Pull Requests so that project maintainers c
 
 For now, the instructions given here are only for Github. Git commit changes are similar. You can also read up on Github's Markdown [documentation](https://guides.github.com/features/mastering-markdown/).
 
-1. In your project home folder, you will see a file name GitNewbie_Contributors.md.
+1. In your project home folder, you will see a file [GitNewbie_Contributors.md](GitNewbie_Contributors.md).
 2. Open the file either on your local project or on Github. 
 3. Add your name to the list at the end.
 4. After the changes have been made, go to the *Commit new file* dialogue.
