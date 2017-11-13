@@ -1,6 +1,6 @@
-If you are a codenewbie or just someone who is using Git & Github for the very first time, this file is for you. Follow the following steps so that you ready to contribute to Kaideals.
+If you are a coding newbie or just someone who is using Git & GitHub for the very first time, this file is for you. Follow these steps so that you ready to contribute to Kaideals:
 
-## - Install Git on your device.
+## Install Git on your device.
 
   Open terminal & type:
   
@@ -16,26 +16,26 @@ If you are a codenewbie or just someone who is using Git & Github for the very f
   
   You should see which version you have installed. 
   
-## - Kaideals 
+## Kaideals 
 
 1. Go to Kaideals [github](https://github.com/codeforprojects/kaideals) page.
-2. In the top right corner, just below the nav bar, click on 'Fork'. This will create a separate Github repo of the project for you. You will automatically be routed to your repo. Wait till the repo is ready.
+2. In the top right corner, just below the nav bar, click on 'Fork'. This will create a separate GitHub repo of the project for you. You will automatically be routed to your repo. Wait till the repo is ready.
 3. Download the repo through the terminal by:
 
 ```git clone (github repo link)```
 
 Now you are ready to contribute.
 
-## - Test Pull Request
+## Test Pull Request
 
-To give you a sense of how to create Pull Requests so that project maintainers can review your code changes, we have created a separate file Markdown file especially for you. 
+To give you a sense of how to create Pull Requests so that project maintainers can review your code changes, we have created a separate Markdown file especially for you. 
 
-### A. Github commit
+### GitHub commit
 
-For now, the instructions given here are only for Github. Git commit changes are similar. You can also read up on Github's Markdown [documentation](https://guides.github.com/features/mastering-markdown/).
+For now, the instructions given here are only for GitHub. Git commit changes are similar. You can also read up on GitHub's Markdown [documentation](https://guides.github.com/features/mastering-markdown/).
 
 1. In your project home folder, you will see a file [GitNewbie_Contributors.md](GitNewbie_Contributors.md).
-2. Open the file either on your local project or on Github. 
+2. Open the file either on your local project or on GitHub. 
 3. Add your name to the list at the end.
 4. After the changes have been made, go to the *Commit new file* dialogue.
 5. Enter a commit title in the first dialog. This should tell what you did in your commit
@@ -43,13 +43,13 @@ For now, the instructions given here are only for Github. Git commit changes are
 6. Select *Commit directly to the ```master``` branch*
 7. Click on *Commit New File*
 
-### B. Pull Request
+### Pull Request
 
-1. Now that your commit is complete, you will see that just above your Github repo file listing, a dialogue saying 
+1. Now that your commit is complete, you will see that just above your GitHub repo file listing, a dialogue saying 
 
 > This branch is 1 commit ahead of codeforprojects:master. 
 
-2. Click on Pull Request. This will create a pull request from your Github repo to the main Kaideals repo. 
+2. Click on Pull Request. This will create a pull request from your GitHub repo to the main Kaideals repo. 
 
 3. See the file change you have made and once your are satisfied with it, Click on Create Pull Request. 
 
