@@ -10,10 +10,11 @@ Kai deals should know the cheapest food in your neighbourhood.
 Helping restaurant owners to get rid of excess food and avoid waste. 
 
 
- ---
+ 
 <br/>
 
-### START HERE:
+## START HERE:
+
 
 Depending on where you are at in you coding journey you should start here. 
 Below are some quick steps /tutorials to get you familiar with the workflow for contributing to the project. 
@@ -36,17 +37,17 @@ You will need to have [Node](#node) and [Docker](#docker) installed to get start
 
 Now you can [Start up the app](#startup)
 
-#### React
+### React / Frontend
 
 If you would like to get involved in the React side of the project please make your first contribution here: 
 React newbie  - coming soon 
 
-####  Node 
+###  Node / Backend
 If you choose to follow the node side of the project make sure you check out the 
 
 - [Express ](https://github.com/codeforprojects/kaideals/blob/master/ExpressPrimer.md)
 
-
+<br/>
 
 
 <a name="git"></a>
@@ -95,7 +96,7 @@ This will install npm and node.
 
 <br/>
 
----
+
 
 ## Getting started
 <br/>
