@@ -200,3 +200,5 @@ coming soon....
 
 ## Team
 [Code For Projects meetup](https://www.meetup.com/houseofcode/)
+
+Join the slack channel [here](https://join.slack.com/t/codeforprojects/shared_invite/enQtMjY4MTc3NTkxNDQ2LTU3MjU2NTVmNTVlODk1YmY1ZjFhZTdlYzQzMzU0Yjg1ZGIyZDAxYzI3YjVlZTJhMWE1MGIzYjNkYWE2NDAxMDg)
