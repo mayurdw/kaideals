@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import DealItem from './Deal_Item.jsx';
+import DealItem from './deal_item.jsx';
 
 import {
     Grid,
