@@ -19,6 +19,7 @@
     "pg-promise": "^7.0.2",
     "pg-pubsub": "^0.3.0",
     "react": "^15.6.2",
+    "react-bootstrap": "^0.31.5",
     "react-dom": "^15.6.2",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
