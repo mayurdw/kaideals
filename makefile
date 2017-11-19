@@ -34,9 +34,12 @@ docker-compose.override.yml:
 	$(call create_docker_compose)
 
 
+
+
 start: docker-compose.override.yml
 	docker-compose up -d
 	${MAKE} refresh
+	docker logs -f app&
 
 stop:
 	docker-compose down || true
