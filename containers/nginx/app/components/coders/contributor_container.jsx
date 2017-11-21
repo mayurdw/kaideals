@@ -41,32 +41,52 @@ class ContributorsContainer extends Component {
         }
     }
 
-    componentDidMount() {
+    async componentDidMount() {
 
         const res =  await fetch('/api/coders');
         const contributors = res.data.coders;
+
+
+        console.log('contributors list', contributors);
 
         let coders = this.state.coders;
         console.log("before",coders);
 
 
-        contributors.forEach( async function (route_path, i, arr) {
-
-            console.log("loop",route_path);
-            const res =  await fetch(`/api/coders/${route_path}`);
-            //
-            let user = Object.assign(res.datas, {id: i+1});
-
-            console.log("loop",user)
-            coders.push(user)
-            console.log("loop",coders)
-
-        })
+        await new Promise(async function (resolve, reject) {
 
 
 
+            try{
+                contributors.forEach(  async function (route_path, i, arr) {
+
+                    console.log("loop",route_path);
+                    const res =  await fetch(`/api/coders/${route_path}`);
+                    //
 
 
+                    let user = Object.assign(res.data, {id: i+1});
+
+                    console.log("loop",user)
+                    coders.push(user)
+                    console.log("loop",coders)
+
+                });
+
+                resolve(coders)
+            }catch(e){
+                reject(e)
+            }
+
+
+        });
+
+
+
+
+        this.setState({coders: coders});
+
+        console.log('after loop', this.state.coders)
 
 
     }

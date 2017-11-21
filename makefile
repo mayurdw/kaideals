@@ -34,12 +34,9 @@ docker-compose.override.yml:
 	$(call create_docker_compose)
 
 
-
-
 start: docker-compose.override.yml
 	docker-compose up -d
 	${MAKE} refresh
-	docker logs -f app&
 
 stop:
 	docker-compose down || true
@@ -110,3 +107,21 @@ rmdb:
 
 ./containers/database/kai_database_snapshot.sql:
 	docker exec postgres pg_dump -h localhost -p 5432 -c -O -x -U postgres kai_database  > ./containers/database/kai_database_snapshot.sql
+
+
+
+
+############################################################################################################
+############################################################################################################
+#        EXPERIMENTAL STUFF
+############################################################################################################
+############################################################################################################
+
+
+watchjs:
+	cd ./containers/app
+	./node_modules/webpack/bin/webpack.js --watch&
+
+killwatchjs:
+	kill $(ps | grep './node_modules/webpack/bin/webpack.js --watch' | awk 'NR==1{print $1}') || true
+

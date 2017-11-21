@@ -1,0 +1,7 @@
+  nginx:
+    container_name: nginx
+    build: containers/nginx
+    volumes:
+        - ./containers/nginx/public:/var/www/public
+    ports:
+      - "8000:80"

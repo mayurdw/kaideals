@@ -5,9 +5,9 @@ const extractSass = new ExtractTextPlugin({
   allChunks: true
 });
 module.exports = {
-    entry: ['./src/app/index.js'],
+    entry: ['./app/index.js'],
     output: {
-        path: __dirname + '/src/public',
+        path: __dirname + '/public',
         filename: 'bundle.js'
     },
     module: {
