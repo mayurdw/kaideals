@@ -1,0 +1,7 @@
+  react:
+    container_name: react
+    build: containers/react
+    volumes:
+        - ./containers/react/public:/var/www/public
+    ports:
+      - "8000:80"

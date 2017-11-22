@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import fetch from 'axios';
+// import fetch from 'axios';
+
 
 // import DealItem from './deal_item.jsx';
 
@@ -41,54 +42,29 @@ class ContributorsContainer extends Component {
         }
     }
 
-    async componentDidMount() {
+    componentDidMount() {
+ 
 
-        const res =  await fetch('/api/coders');
-        const contributors = res.data.coders;
-
-
-        console.log('contributors list', contributors);
-
-        let coders = this.state.coders;
-        console.log("before",coders);
-
-
-        await new Promise(async function (resolve, reject) {
-
-
-
-            try{
-                contributors.forEach(  async function (route_path, i, arr) {
-
-                    console.log("loop",route_path);
-                    const res =  await fetch(`/api/coders/${route_path}`);
-                    //
-
-
-                    let user = Object.assign(res.data, {id: i+1});
-
-                    console.log("loop",user)
-                    coders.push(user)
-                    console.log("loop",coders)
-
-                });
-
-                resolve(coders)
-            }catch(e){
-                reject(e)
-            }
-
-
-        });
-
-
-
-
-        this.setState({coders: coders});
-
-        console.log('after loop', this.state.coders)
-
-
+        // fetch('/api/coders').then((res)=>{
+        //
+        //     const contributors = res.data.coders;
+        //
+        //     let coders = this.state.coders;
+        //
+        //
+        //     contributors.forEach(  async function (route_path, i, arr) {
+        //
+        //         const res =  await fetch(`/api/coders/${route_path}`);
+        //
+        //         let user = Object.assign(res.data, {id: i+1});
+        //         coders.push(user)
+        //
+        //     });
+        //
+        //     this.setState({coders: coders});
+        //
+        //     console.log('after loop', this.state.coders)
+        // })
     }
 
 
@@ -127,7 +103,7 @@ class ContributorsContainer extends Component {
                     <Row>
                         {/* ADD Your components here :) */}
                         {/*{this.codersList()}*/}
-                        {this.codersList()}
+                        {this.codersList.bind(this)}
                     </Row>
                 </Grid>
             </div>
