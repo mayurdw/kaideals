@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import '../../../public/stylesheets/registrationpage.scss'
+// import '../../../public/stylesheets/_registrationpage'
 
 
 class RegistrationPage extends Component {
