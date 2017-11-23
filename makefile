@@ -45,7 +45,7 @@ stop:
 
 clean:
 	rm -f ~/.ecs/config
-	rm docker-compose.override.yml
+	rm docker-compose.override.yml || true
 
 
 build:
