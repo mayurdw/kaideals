@@ -9,4 +9,5 @@ docker-compose.override.yml
 .makefile.swp
 .DS_Store
 .sass-cache/
-containers/app/src/public/bundle.js
+containers/react/public/bundle.js
+containers/react/public/stylesheets/screen.css
