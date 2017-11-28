@@ -6,7 +6,7 @@ var js = require('./js');
 var options = {
     promiseLib: promise
     , extend(obj, dc) {
-        //obj.deals = new js.Deals(obj, pgp);
+        obj.deals = new js.Deals(obj, pgp);
     }
 };
 

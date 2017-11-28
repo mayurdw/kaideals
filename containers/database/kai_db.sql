@@ -297,5 +297,16 @@ ALTER TABLE public.logins ADD CONSTRAINT logins_uq UNIQUE (dealer);
 -- Populate tables with test data
 --
 
-INSERT INTO public.logins(email, credential) VALUES ('tropical.tux@gmail.com', 'foobar');
+INSERT INTO public.food_categories(name) VALUES (
+    'Challenges'
+);
+
+INSERT INTO public.deals(name, description, price, food_category, begins, ends) VALUES (
+    'Pancake Tower Challenge'
+    , 'The name says it all'
+    , 24.00
+    , 1
+    , '2017-01-01'
+    , '2018-01-01'
+);
 

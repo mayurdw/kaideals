@@ -1,4 +1,4 @@
 "use strict";
 
-//exports.Deals = require('./deals');
+exports.Deals = require('./deals');
 

@@ -1,7 +1,11 @@
 "use strict";
 
+const models = require('../models');
+
 exports.get_deals = function(req, res, next) {
-    res.send('/api/deals');
+    models.deals.find().then(data => {
+        res.json(data);
+    });
 };
 
 exports.create_deal = function(req, res, next) {

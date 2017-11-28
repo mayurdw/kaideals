@@ -4,9 +4,9 @@ const QueryFile = require('pg-promise').QueryFile;
 const path = require('path');
 
 module.exports = {
-    deals: {
-        // foo: sql('deals/foo.sql')
-        // , bar: sql('deals/bar.sql')
+    Deals: {
+        add: sql('deals/add.sql')
+        , find: sql('deals/find.sql')
     }
 };
 
