@@ -1,22 +1,11 @@
 import React, {Component} from "react";
-// import '../../../public/stylesheets/_registrationpage'
-
-
-class RegistrationPage extends Component {
-
-
-
-    handleSubmit(event) {
-        alert('Registration submitted ' + this.state.value);
-        event.preventDefault();
-    }
-
+ class Registration extends Component {
 
     render() {
 
         return (
                 <div className="form-div-center">
-                    <form  onSubmit={this.handleSubmit}>
+                    <form>
                             <label>
                                 Restaurant Name:
                             <input type="text" name="restaurantName"  />
@@ -37,19 +26,4 @@ class RegistrationPage extends Component {
     }
 }
 
-function validate(values) {
-    const errors = {};
-    if (!values.first) {
-        errors.first = "First name is required";
-    }
-    if (!values.last) {
-        errors.last = "Last name is required";
-    }
-
-    return errors;
-}
-
-
-
-
-export default RegistrationPage
+export default Registration
