@@ -1,0 +1,15 @@
+{
+  "name": "app",
+  "version": "0.0.1",
+  "license": "MIT",
+  "scripts": {},
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "express": "^4.15.5",
+    "fetch-promise": "^1.0.2",
+    "pg-promise": "^7.0.2",
+    "pg-pubsub": "^0.3.0",
+    "throng": "^4.0.0",
+    "winston": "^2.2.0"
+  }
+}

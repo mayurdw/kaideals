@@ -5,7 +5,9 @@ node_modules/
 .iml
 .env
 *.log
-docker-compose.overrride.yml
+docker-compose.override.yml
 .makefile.swp
 .DS_Store
 .sass-cache/
+containers/react/public/bundle.js
+containers/react/public/stylesheets/screen.css

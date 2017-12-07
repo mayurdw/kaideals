@@ -1,0 +1,7 @@
+  api:
+    container_name: api
+    build: containers/api
+    volumes:
+        - ./containers/api/src:/var/www/api/src
+    environment:
+      - DATABASE_URL=postgres://postgres:password@postgres:5432/kai_db

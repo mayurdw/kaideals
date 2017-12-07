@@ -44,8 +44,7 @@ stop:
 
 
 clean:
-	rm -f ~/.ecs/config
-	rm docker-compose.override.yml
+	rm docker-compose.override.yml || true
 
 
 build:
@@ -107,3 +106,21 @@ rmdb:
 
 ./containers/database/kai_database_snapshot.sql:
 	docker exec postgres pg_dump -h localhost -p 5432 -c -O -x -U postgres kai_database  > ./containers/database/kai_database_snapshot.sql
+
+
+
+
+############################################################################################################
+############################################################################################################
+#        EXPERIMENTAL STUFF
+############################################################################################################
+############################################################################################################
+
+
+watchjs:
+	cd ./containers/app
+	./node_modules/webpack/bin/webpack.js --watch&
+
+killwatchjs:
+	kill $(ps | grep './node_modules/webpack/bin/webpack.js --watch' | awk 'NR==1{print $1}') || true
+
